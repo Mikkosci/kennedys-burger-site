@@ -609,6 +609,37 @@
     "openingHours": "Mo-Su 15:00-21:00",
     "menu": "#menu"
   }
+  .story-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+    margin-top:30px;
+}
+
+.story-video iframe{
+    width:100%;
+    aspect-ratio:9/16;
+    border-radius:20px;
+    border:none;
+}
+
+.story-text h2{
+    margin-bottom:20px;
+}
+
+.story-text p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+@media(max-width:768px){
+
+    .story-container{
+        grid-template-columns:1fr;
+    }
+
+}
   </script>
 </head>
 <body>
