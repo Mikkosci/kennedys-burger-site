@@ -1,784 +1,216 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kennedy's Charcoal Grilled Burger | Charcoal Grilled Burger Quezon City</title>
-  <meta name="description" content="Kennedy's Charcoal Grilled Burger in Quezon City serves charcoal-grilled burgers, sulit meals, seafood sides, and bold smoky flavor made fresh daily." />
-  <meta name="keywords" content="Charcoal grilled burger Quezon City, Best burgers in Quezon City, Kennedy's Burger, La Loma burger, charcoal burger Philippines" />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0f0c09" />
-  <meta property="og:title" content="Kennedy's Charcoal Grilled Burger" />
-  <meta property="og:description" content="Charcoal-grilled burgers made fresh daily in Quezon City. Big flavor, smoky finish, and sulit meals for the local community." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_PH" />
-  <meta property="og:image" content="./burgermenu1.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --char: #0f0c09;
-      --char-2: #17120e;
-      --smoke: #241c16;
-      --wood: #33261d;
-      --ember: #c7492f;
-      --ember-2: #ff8b3d;
-      --gold: #e8a020;
-      --cream: #f6efe7;
-      --ash: #b6a18f;
-      --line: rgba(255,255,255,.09);
-      --shadow: 0 24px 70px rgba(0,0,0,.38);
-      --radius: 24px;
-      --radius-sm: 18px;
-      --max: 1180px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kennedy's Charcoal Grilled Burger</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+header{
+    background:#000;
+    padding:15px 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#ffb703;
+}
+
+.menu{
+    display:flex;
+    gap:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6));
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 24px;
+    background:#ffb703;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    margin:5px;
+}
+
+section{
+    padding:60px 5%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+    color:#ffb703;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:10px;
+}
+
+.menu-items{
+    max-width:700px;
+    margin:auto;
+}
+
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+    border-bottom:1px solid #333;
+}
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--cream);
-      background:
-        radial-gradient(circle at top right, rgba(231,160,32,.10), transparent 28%),
-        radial-gradient(circle at left 18%, rgba(199,73,47,.18), transparent 24%),
-        linear-gradient(180deg, #120e0a 0%, #0f0c09 40%, #120f0c 100%);
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
-    .section { padding: 72px 0; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .5rem .8rem;
-      border: 1px solid rgba(232,160,32,.22);
-      border-radius: 999px;
-      background: rgba(232,160,32,.08);
-      color: #ffd9a0;
-      font-size: .84rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .section-title {
-      margin: 18px 0 14px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.3rem, 5vw, 4rem);
-      line-height: .95;
-      letter-spacing: .02em;
-    }
-    .section-copy {
-      max-width: 720px;
-      color: var(--ash);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(14px);
-      background: rgba(15,12,9,.88);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 78px;
-      gap: 16px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-    .brand-mark {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(255,255,255,.12);
-      background: #120d09;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    .brand-copy strong {
-      display: block;
-      font-size: .98rem;
-      line-height: 1.2;
-    }
-    .brand-copy span {
-      display: block;
-      color: var(--ash);
-      font-size: .76rem;
-      margin-top: 2px;
-    }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 16px;
-      width: 100%;
-      padding: 18px;
-      margin-top: 16px;
-      border-radius: 22px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      color: #e9ddd1;
-      font-size: .94rem;
-    }
-    .nav-links.open {
-      display: flex;
-    }
-    .nav-links a:hover { color: #fff; }
-    .menu-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: #ffd9a0;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background .2s ease, transform .2s ease;
-    }
-    .menu-toggle:hover { background: rgba(255,255,255,.12); transform: translateY(-1px); }
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: .9rem 1rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--ember) 0%, #d56f2c 100%);
-      color: #fff;
-      font-weight: 700;
-      box-shadow: 0 12px 30px rgba(199,73,47,.25);
-      white-space: nowrap;
-      cursor: pointer;
-      pointer-events: auto;
-    }
-
-    .hero {
-      position: relative;
-      padding: 48px 0 28px;
-      overflow: hidden;
-    }
-    .hero::before,
-    .hero::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(8px);
-      pointer-events: none;
-    }
-    .hero::before {
-      width: 280px;
-      height: 280px;
-      top: -70px;
-      right: -80px;
-      background: radial-gradient(circle, rgba(232,160,32,.22) 0%, rgba(232,160,32,0) 72%);
-    }
-    .hero::after {
-      width: 260px;
-      height: 260px;
-      bottom: 6%;
-      left: -100px;
-      background: radial-gradient(circle, rgba(199,73,47,.18) 0%, rgba(199,73,47,0) 72%);
-    }
-    .hero-grid {
-      display: grid;
-      gap: 28px;
-      align-items: center;
-    }
-    .hero-copy h1 {
-      margin: 18px 0 16px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.3rem, 9vw, 6.5rem);
-      line-height: .88;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-    }
-    .hero-copy p {
-      margin: 0;
-      max-width: 640px;
-      color: #e7d7c8;
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-    .hero-subheadline {
-      margin: 0.8rem 0 0;
-      max-width: 640px;
-      color: #ffd9a0;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      letter-spacing: .01em;
-    }
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .55rem;
-      min-height: 52px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
-      cursor: pointer;
-      pointer-events: auto;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--ember) 0%, var(--ember-2) 100%);
-      color: #fff;
-      box-shadow: 0 16px 32px rgba(199,73,47,.26);
-    }
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: var(--cream);
-    }
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 28px;
-    }
-    .hero-point,
-    .mini-card,
-    .menu-card,
-    .proof-card,
-    .visit-card,
-    .process-step,
-    .menu-highlight,
-    .social-feed,
-    .photo-tile {
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow);
-    }
-    .hero-point {
-      padding: 14px 16px;
-      color: #f2e8de;
-      font-size: .95rem;
-    }
-    .hero-visual {
-      position: relative;
-      padding: 18px;
-      border-radius: 32px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)),
-        linear-gradient(145deg, rgba(232,160,32,.08), rgba(199,73,47,.08));
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
-    }
-    .hero-logo-wrap {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      border-radius: 28px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top center, rgba(232,160,32,.18), transparent 34%),
-        linear-gradient(180deg, #1b1410 0%, #110d0a 100%);
-      border: 1px solid rgba(255,255,255,.06);
-    }
-    .hero-logo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 12%;
-      border-radius: 50%;
-      border: 1px dashed rgba(232,160,32,.25);
-    }
-    .hero-logo-wrap img {
-      width: min(100%, 480px);
-      max-width: 82%;
-      filter: drop-shadow(0 24px 50px rgba(0,0,0,.35));
-    }
-    .hero-badges {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .mini-card {
-      padding: 14px 16px;
-    }
-    .mini-card strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: .95rem;
-    }
-    .mini-card span {
-      color: var(--ash);
-      font-size: .88rem;
-      line-height: 1.6;
-    }
-
-    .trust-strip {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .trust-chip {
-      padding: 14px 16px;
-      text-align: center;
-      border: 1px solid rgba(232,160,32,.16);
-      border-radius: 18px;
-      background: rgba(232,160,32,.06);
-      color: #f5e7d9;
-      font-weight: 600;
-    }
-
-    .photo-grid,
-    .process-grid,
-    .menu-grid,
-    .proof-grid,
-    .visit-grid,
-    .map-grid {
-      display: grid;
-      gap: 16px;
-    }
-    .photo-tile {
-      padding: 20px;
-      min-height: 190px;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
-        radial-gradient(circle at top right, rgba(232,160,32,.16), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(199,73,47,.16), transparent 35%);
-    }
-    .photo-tile::after {
-      content: '';
-      position: absolute;
-      inset: auto -40px -40px auto;
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.03);
-    }
-    .photo-tile strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.05rem;
-    }
-    .photo-tile p {
-      margin: 0;
-      color: var(--ash);
-      line-height: 1.7;
-      font-size: .95rem;
-    }
-
-    .process-step,
-    .menu-card,
-    .proof-card,
-    .visit-card,
-    .social-feed,
-    .menu-highlight {
-      padding: 22px;
-    }
-    .process-step .step-no {
-      display: inline-flex;
-      width: 40px;
-      height: 40px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(232,160,32,.14);
-      color: #ffd58b;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-    .process-step h3,
-    .proof-card h3,
-    .visit-card h3,
-    .social-feed h3,
-    .menu-highlight h3 {
-      margin: 0 0 10px;
-      font-size: 1.14rem;
-    }
-    .process-step p,
-    .proof-card p,
-    .visit-card p,
-    .social-feed p,
-    .menu-highlight p {
-      margin: 0;
-      color: var(--ash);
-      line-height: 1.75;
-      font-size: .96rem;
-    }
-
-    .menu-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 26px 0 18px;
-    }
-    .menu-tab {
-      padding: .8rem 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.1);
-      color: #eadccf;
-      background: rgba(255,255,255,.03);
-      font-size: .92rem;
-      font-weight: 600;
-    }
-    .menu-card {
-      position: relative;
-      overflow: hidden;
-    }
-    .menu-card::before {
-      content: '';
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
-      background: linear-gradient(180deg, var(--gold), var(--ember));
-    }
-    .menu-card .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      margin-bottom: 12px;
-      padding: .36rem .68rem;
-      border-radius: 999px;
-      background: rgba(232,160,32,.1);
-      color: #ffd79b;
-      font-size: .8rem;
-      font-weight: 700;
-    }
-    .menu-card h3 {
-      margin: 0;
-      font-size: 1.15rem;
-    }
-    .menu-card p {
-      margin: 10px 0 14px;
-      color: var(--ash);
-      line-height: 1.7;
-      font-size: .95rem;
-    }
-    .price-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-top: 12px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-    .price {
-      font-size: 1.18rem;
-      font-weight: 800;
-      color: #fff;
-    }
-    .meta-note {
-      color: #d6c1b0;
-      font-size: .84rem;
-    }
-
-    .proof-banner {
-      margin-top: 20px;
-      padding: 18px 20px;
-      border-radius: 20px;
-      border: 1px solid rgba(232,160,32,.16);
-      background: linear-gradient(90deg, rgba(232,160,32,.08), rgba(199,73,47,.08));
-      color: #f8e9d4;
-    }
-
-    .social-feed iframe,
-    .map-frame iframe {
-      width: 100%;
-      border: 0;
-      border-radius: 16px;
-      background: #120d09;
-    }
-
-    .map-frame {
-      padding: 10px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
-    }
-
-    .cta-banner {
-      padding: 28px;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,.08);
-      background:
-        linear-gradient(120deg, rgba(232,160,32,.12), rgba(199,73,47,.12)),
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-    .cta-banner h2 {
-      margin: 0 0 12px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: .03em;
-    }
-    .cta-banner p {
-      margin: 0 auto 18px;
-      max-width: 700px;
-      color: var(--ash);
-      line-height: 1.8;
-    }
-
-    footer {
-      padding: 36px 0 54px;
-      color: #cdb7a6;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-    .footer-grid {
-      display: grid;
-      gap: 16px;
-    }
-    .footer-grid p {
-      margin: 0;
-      line-height: 1.7;
-      font-size: .92rem;
-    }
-
-    @media (min-width: 760px) {
-      .hero-grid,
-      .map-grid { grid-template-columns: 1.1fr .9fr; }
-      .photo-grid,
-      .process-grid,
-      .proof-grid,
-      .visit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .trust-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .hero-badges { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .footer-grid { grid-template-columns: 1.15fr .85fr; align-items: end; }
-    }
-
-    @media (min-width: 1024px) {
-      .section { padding: 92px 0; }
-      .nav {
-        flex-wrap: nowrap;
-      }
-      .nav-links {
-        display: inline-flex;
-        width: auto;
-        flex-direction: row;
-        margin-top: 0;
-        padding: 0;
-        border: none;
-        background: transparent;
-      }
-      .nav-links a { width: auto; padding: 0; }
-      .menu-toggle { display: none; }
-      .hero { padding-top: 64px; }
-      .menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Kennedy's Charcoal Grilled Burger",
-    "servesCuisine": ["Burgers", "Grilled Food", "Fast Casual"],
-    "description": "Charcoal-grilled burgers made fresh daily in Quezon City with smoky flavor, sulit meals, and seafood sides.",
-    "url": "https://www.facebook.com/kennedyscharcoalgrilledburger/",
-    "image": "./burgermenu1.jpg"
-  }
-  </script>
+    .hero h1{
+        font-size:2rem;
+    }
+}
+</style>
 </head>
+
 <body>
-  <header class="site-header">
-    <nav class="container nav">
-      <div class="brand">
-        <div class="brand-copy">
-          <strong>Kennedy's Burger</strong>
-          <span>Charcoal Grilled</span>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#location">Location</a>
-      </div>
-      <button class="menu-toggle" id="menuToggle">Menu</button>
-      <a href="https://www.facebook.com/kennedyscharcoalgrilledburger/" target="_blank" class="nav-cta">Order Now</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">🔥 Charcoal Grilled</div>
-          <h1>Bold Flavors, Smoky Finish</h1>
-          <p class="hero-subheadline">Fresh charcoal-grilled burgers made daily in Quezon City. Experience big flavor and sulit meals.</p>
-          <div class="hero-cta">
-            <a href="https://www.facebook.com/kennedyscharcoalgrilledburger/" target="_blank" class="btn btn-primary">Order Now</a>
-            <a href="#menu" class="btn btn-secondary">View Menu</a>
-          </div>
-          <div class="hero-points">
-            <div class="hero-point">✓ Charcoal Grilled</div>
-            <div class="hero-point">✓ Fresh Daily</div>
-            <div class="hero-point">✓ Sulit Meals</div>
-            <div class="hero-point">✓ Smoky Flavor</div>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-logo-wrap">
-            <img src="./burgermenu1.jpg" alt="Kennedy's Charcoal Grilled Burger" />
-          </div>
-          <div class="hero-badges">
-            <div class="mini-card">
-              <strong>🏆 La Loma Favorite</strong>
-              <span>Premium charcoal-grilled burgers</span>
-            </div>
-            <div class="mini-card">
-              <strong>⭐ Fresh Daily</strong>
-              <span>Made to order with quality ingredients</span>
-            </div>
-            <div class="mini-card">
-              <strong>🤤 Bold Flavor</strong>
-              <span>Distinctive smoky charcoal taste</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<header>
+<nav>
+<div class="logo">Kennedy's Burger</div>
 
-    <section class="section" id="menu">
-      <div class="container">
-        <span class="eyebrow">📋 Menu</span>
-        <h2 class="section-title">Our Burgers</h2>
-        <p class="section-copy">Charcoal-grilled perfection. Every burger is made fresh with quality ingredients and bold smoky flavor.</p>
-        <div class="menu-grid">
-          <div class="menu-card">
-            <span class="tag">Signature</span>
-            <h3>Classic Charcoal Burger</h3>
-            <p>Our signature charcoal-grilled burger with fresh toppings and smoky flavor.</p>
-            <div class="price-row">
-              <span class="price">₱150</span>
-              <span class="meta-note">Best Seller</span>
-            </div>
-          </div>
-          <div class="menu-card">
-            <span class="tag">Premium</span>
-            <h3>Double Charcoal Burger</h3>
-            <p>Two charcoal-grilled patties for double the flavor and satisfaction.</p>
-            <div class="price-row">
-              <span class="price">₱280</span>
-              <span class="meta-note">Premium Option</span>
-            </div>
-          </div>
-          <div class="menu-card">
-            <span class="tag">Seafood</span>
-            <h3>Charcoal Fish Burger</h3>
-            <p>Fresh charcoal-grilled fish with smoky finish and seasoning.</p>
-            <div class="price-row">
-              <span class="price">₱165</span>
-              <span class="meta-note">Specialty</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="menu">
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#menu">Menu</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
 
-    <section class="section" id="about">
-      <div class="container">
-        <span class="eyebrow">✨ About Us</span>
-        <h2 class="section-title">Why Kennedy's?</h2>
-        <p class="section-copy">We're passionate about charcoal-grilled burgers. Each burger is made fresh with quality ingredients and cooked over charcoal for authentic smoky flavor.</p>
-        <div class="photo-grid">
-          <div class="photo-tile">
-            <strong>🔥 Charcoal Grilled</strong>
-            <p>Every burger is grilled over charcoal for bold, smoky flavor that sets us apart.</p>
-          </div>
-          <div class="photo-tile">
-            <strong>🌟 Fresh Daily</strong>
-            <p>We prepare ingredients fresh each day to ensure quality and taste in every burger.</p>
-          </div>
-          <div class="photo-tile">
-            <strong>💰 Sulit Meals</strong>
-            <p>Great value, big flavor, and generous portions for the whole community.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="hero" id="home">
+<h1>Kennedy's Charcoal Grilled Burger</h1>
 
-    <section class="section" id="location">
-      <div class="container">
-        <span class="eyebrow">📍 Location</span>
-        <h2 class="section-title">Visit Us</h2>
-        <p class="section-copy">Find Kennedy's Charcoal Grilled Burger in La Loma, Quezon City. We're open daily with fresh charcoal-grilled burgers.</p>
-        <div class="map-grid">
-          <div>
-            <div class="visit-card">
-              <h3>📍 Address</h3>
-              <p>La Loma, Quezon City, Philippines</p>
-            </div>
-            <div class="visit-card">
-              <h3>📞 Contact</h3>
-              <p>Visit us on Facebook: Kennedy's Charcoal Grilled Burger</p>
-            </div>
-            <div class="visit-card">
-              <h3>⏰ Hours</h3>
-              <p>Open daily for fresh charcoal-grilled burgers</p>
-            </div>
-          </div>
-          <div class="map-frame">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.8627431623657!2d121.0122!3d14.6091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7d57b57b57b%3A0x0!2sLa%20Loma%2C%20Quezon%20City!5e0!3m2!1sen!2sph!4v1234567890" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
+<p>Freshly grilled burgers packed with flavor.</p>
 
-    <section class="section">
-      <div class="container">
-        <div class="cta-banner">
-          <h2>Ready for Bold Flavor?</h2>
-          <p>Order your charcoal-grilled burger today and experience authentic smoky flavor made fresh daily.</p>
-          <a href="https://www.facebook.com/kennedyscharcoalgrilledburger/" target="_blank" class="btn btn-primary">Order on Facebook</a>
-        </div>
-      </div>
-    </section>
-  </main>
+<a class="btn" href="https://www.facebook.com/" target="_blank">
+Visit Facebook
+</a>
 
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Kennedy's Charcoal Grilled Burger</strong>
-        <p>Authentic charcoal-grilled burgers made fresh daily in Quezon City. Big flavor, smoky finish, sulit meals.</p>
-      </div>
-      <div>
-        <p><strong>Follow Us:</strong><br>
-        <a href="https://www.facebook.com/kennedyscharcoalgrilledburger/" target="_blank">Facebook</a></p>
-      </div>
-    </div>
-  </footer>
+<a class="btn" href="#contact">
+Order Now
+</a>
+</section>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelector('.nav-links');
+<section id="gallery">
+<h2 class="section-title">Burger Gallery</h2>
 
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-      });
-    }
-  </script>
+<div class="gallery">
+<img src="burger1.jpg" alt="Burger 1">
+<img src="burger2.jpg" alt="Burger 2">
+</div>
+</section>
+
+<section id="menu">
+<h2 class="section-title">Our Menu</h2>
+
+<div class="menu-items">
+
+<div class="menu-item">
+<span>Classic Burger</span>
+<span>₱99</span>
+</div>
+
+<div class="menu-item">
+<span>Cheese Burger</span>
+<span>₱119</span>
+</div>
+
+<div class="menu-item">
+<span>Bacon Burger</span>
+<span>₱139</span>
+</div>
+
+<div class="menu-item">
+<span>Double Burger</span>
+<span>₱169</span>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+
+<p style="text-align:center;">
+Facebook: Kennedy's Charcoal Grilled Burger
+</p>
+
+<p style="text-align:center;margin-top:15px;">
+<a class="btn" href="https://www.facebook.com/" target="_blank">
+Message Us
+</a>
+</p>
+</section>
+
+<footer>
+<p>© 2025 Kennedy's Charcoal Grilled Burger. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
+```
